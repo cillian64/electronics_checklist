@@ -52,7 +52,7 @@ attribution (to me and CUSF).
 - Check component power ratings
   - Particularly resistors, dividers can dissipate more than you might expect
   - Current sense resistors sometimes need to be massive
-  - Capacitors passing AC current also dissipate power because of their ESD
+  - Capacitors passing AC current also dissipate power because of their ESR
 - Check capacitor voltage ratings
 - Check that chip capacitor dialectrics are appropriate.
   - Y5V is terrible and you probably shouldn't use it - it can lose up to 82%
@@ -81,6 +81,10 @@ attribution (to me and CUSF).
 
 
 # PCB
+## General / setup
+ - Check minimum via drill and annular ring against fab capability
+ - Check minimum track/gap spacing against fab capacity
+
 ## Footprints
 - Check footprint pin numbering matches datasheet and schematic pin numbering,
   especially on connectors and passives
@@ -109,6 +113,7 @@ attribution (to me and CUSF).
   - If neither of those are possible, print out the PCB 1:1 to check fit
 - Check component shapes/height against enclosure or other mechanical parts
 - Radius board corners (because it looks nice)
+  - Be aware of the fab's minimum radius
 - Check that connectors will actually have clearance to be plugged/unplugged
 - Consider whether heatsinks need isolating, what voltage they will be at, and
   what they will touch
@@ -145,6 +150,8 @@ attribution (to me and CUSF).
   minimum used for traces/pads
 - Check planes use thermal relief spokes rather than solid connections to pads
   to make hand-soldering easier
+  - Consider only using thermal relief spokes for PTH and solid connections
+    for SMD
 - Consider filling empty layers with planes (makes etching easier, less
   important for commercial fabs)
 - Plane stitching if multiple planes are used, especially if high-speed
@@ -194,8 +201,6 @@ attribution (to me and CUSF).
   - Check directionality is balanced (e.g. you can have problems if one side
     has lots of traces alined to the X axis and the other side has traces
     mostly aligned to the Y axis.)
-- Check minimum via drill and annular ring against fab capability
-- Check minimum track/gap spacing
 - Check minimum width on mask layer between pads.  Small mask slivers can break
   off and cause problems
 - Run Design Rule Check (DRC)
