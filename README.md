@@ -162,6 +162,7 @@ attribution (to me and CUSF).
 ## Silkscreen
 - Name, contact details, copyright/license
 - URL of the repository if open source (and if there is space)
+- If using JLC, placeholder for order number
 - PCB Revision
 - Space to write hardware revision or a knock-out box (e.g. for component value
   changes or bodge-wires)
